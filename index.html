@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystery Shop – Discover a Random Online Store</title>
+  <meta name="description" content="Press the button and discover a random online store you've never heard of. Explore 200+ handpicked shops across tech, outdoor, gifts, clothing, pets, gaming, and home categories.">
+  <meta property="og:title" content="Mystery Shop – Discover a Random Online Store">
+  <meta property="og:description" content="Hit the button. Get a random online store. Shop something new today.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mysteryshop.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mysteryshop.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mystery Shop",
+    "url": "https://mysteryshop.com",
+    "description": "Discover a random online store and explore 200+ handpicked shops.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://mysteryshop.com/categories/",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8618142757434912" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">🎲 <span>Mystery</span>Shop</div>
+    <div class="nav-links">
+      <a href="categories/index.html">Browse Categories</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✨ 200+ Handpicked Stores</div>
+  <h1>Mystery Shop –<br><span class="highlight">Discover a Random</span><br>Online Store</h1>
+  <p>Tired of the same old places? Hit the button and we'll send you to a hand-picked online store you might've never discovered on your own.</p>
+  <button class="btn-mystery" id="mysteryBtn" onclick="goMystery()">
+    <span class="btn-icon">🎲</span>
+    <div class="spinner"></div>
+    Mystery Shop
+  </button>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num" id="storeCount">200+</div><div class="stat-label">Stores</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">Categories</div></div>
+    <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Discoveries</div></div>
+  </div>
+</section>
+
+<!-- AdSense Leaderboard -->
+<div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+  <div class="ad-slot">
+    <!-- Google AdSense 728x90 Leaderboard -->
+    <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX" data-ad-format="auto"></ins> -->
+    Advertisement
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<div class="section">
+  <h2 class="section-title">Browse by Category</h2>
+  <p class="section-sub">Or roll the dice on any category below</p>
+  <div class="cat-grid" id="catGrid"></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 24px;margin:0;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:8px;">How It Works</h2>
+    <p style="color:var(--text-muted);margin-bottom:40px;">Simple, fast, fun.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
+      <div style="background:var(--bg-card2);border:1px solid var(--border);border-radius:14px;padding:28px 22px;">
+        <div style="font-size:2.5rem;margin-bottom:14px;">🎲</div>
+        <div style="font-weight:700;margin-bottom:8px;">1. Press the Button</div>
+        <div style="color:var(--text-muted);font-size:0.9rem;">Hit Mystery Shop and we randomly select a store from our curated database.</div>
+      </div>
+      <div style="background:var(--bg-card2);border:1px solid var(--border);border-radius:14px;padding:28px 22px;">
+        <div style="font-size:2.5rem;margin-bottom:14px;">🏪</div>
+        <div style="font-weight:700;margin-bottom:8px;">2. Discover a Store</div>
+        <div style="color:var(--text-muted);font-size:0.9rem;">See the store name, description, price range, and category before you visit.</div>
+      </div>
+      <div style="background:var(--bg-card2);border:1px solid var(--border);border-radius:14px;padding:28px 22px;">
+        <div style="font-size:2.5rem;margin-bottom:14px;">🛍️</div>
+        <div style="font-weight:700;margin-bottom:8px;">3. Shop or Roll Again</div>
+        <div style="color:var(--text-muted);font-size:0.9rem;">Visit the store or spin again until you find something you love.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED STORES (random 6) -->
+<div class="section">
+  <h2 class="section-title">Stores You Might Like</h2>
+  <p class="section-sub">A random selection — refresh for new ones</p>
+  <div class="store-grid" id="featuredGrid"></div>
+</div>
+
+<!-- AdSense Rectangle -->
+<div style="max-width:1100px;margin:0 auto;padding:0 24px 40px;">
+  <div class="ad-slot">
+    <!-- Google AdSense 300x250 Rectangle -->
+    <!-- <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-XXXX" data-ad-slot="XXXX"></ins> -->
+    Advertisement
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="categories/index.html">Categories</a>
+      <a href="sitemap.xml">Sitemap</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <p class="footer-disclosure">
+      <strong>Affiliate Disclosure:</strong> MysteryShop.com is a participant in various affiliate advertising programs. 
+      When you click links on this site and make a purchase, we may earn a small commission at no extra cost to you. 
+      This helps us keep the lights on and add more stores. Thank you for your support!
+    </p>
+    <p class="footer-copy">© 2025 MysteryShop. All rights reserved. | 200+ stores across 7 categories.</p>
+  </div>
+</footer>
+
+<script src="js/stores.js"></script>
+<script>
+  // Update store count
+  document.getElementById('storeCount').textContent = STORES.length + '+';
+
+  // Mystery Shop button
+  function goMystery() {
+    const btn = document.getElementById('mysteryBtn');
+    btn.classList.add('loading');
+    btn.disabled = true;
+    setTimeout(() => {
+      const store = getRandomStore();
+      window.location.href = 'stores/' + store.slug + '.html';
+    }, 600);
+  }
+
+  // Render categories
+  const catGrid = document.getElementById('catGrid');
+  Object.entries(CATEGORIES).forEach(([key, cat]) => {
+    const count = STORES.filter(s => s.category === key).length;
+    catGrid.innerHTML += `
+      <a class="cat-card" href="categories/${key}.html">
+        <div class="cat-icon">${cat.icon}</div>
+        <div class="cat-name">${cat.name}</div>
+        <div class="cat-count">${count} stores</div>
+      </a>
+    `;
+  });
+
+  // Render featured (random 6)
+  const featured = [...STORES].sort(() => Math.random() - 0.5).slice(0, 6);
+  const grid = document.getElementById('featuredGrid');
+  featured.forEach(store => {
+    grid.innerHTML += `
+      <div class="store-card">
+        <div class="store-cat-badge">${CATEGORIES[store.category].icon} ${CATEGORIES[store.category].name}</div>
+        <div class="store-name">${store.name}</div>
+        <div class="store-desc">${store.description}</div>
+        <div class="store-price">💰 ${store.priceRange}</div>
+        <a href="stores/${store.slug}.html">View Store →</a>
+      </div>
+    `;
+  });
+</script>
+</body>
+</html>
